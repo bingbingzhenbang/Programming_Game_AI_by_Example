@@ -5,6 +5,7 @@
 Miner::Miner(int id)
 :BaseGameEntity(id),
 m_pCurrentState(GoHomeAndSleepTilRested::Instance()),
+m_Location(Location_Shack),
 m_iGoldCarried(0),
 m_iMoneyInBank(0),
 m_iThirst(0),

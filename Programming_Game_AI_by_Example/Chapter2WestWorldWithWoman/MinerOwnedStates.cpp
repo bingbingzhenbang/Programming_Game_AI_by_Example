@@ -1,4 +1,5 @@
 #include "MinerOwnedStates.h"
+#include "StateMachnine.h"
 #include "EntityNames.h"
 #include <iostream>
 
@@ -24,11 +25,11 @@ void EnterMineAndDigForNugget::Execute(Miner *pMiner)
 	std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Pick up a nugget";
 	if (pMiner->PocketsFull())
 	{
-		pMiner->ChangeState(VisitBankAndDepositGold::Instance());
+		pMiner->GetFSM()->ChangeState(VisitBankAndDepositGold::Instance());
 	}
 	if (pMiner->Thirsty())
 	{
-		pMiner->ChangeState(QuenchThirst::Instance());
+		pMiner->GetFSM()->ChangeState(QuenchThirst::Instance());
 	}
 }
 
@@ -60,10 +61,10 @@ void VisitBankAndDepositGold::Execute(Miner *pMiner)
 	if (pMiner->Wealth() >= ComfortLevel)
 	{
 		std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Rich enough for now";
-		pMiner->ChangeState(GoHomeAndSleepTilRested::Instance());
+		pMiner->GetFSM()->ChangeState(GoHomeAndSleepTilRested::Instance());
 	}
 	else
-		pMiner->ChangeState(EnterMineAndDigForNugget::Instance());
+		pMiner->GetFSM()->ChangeState(EnterMineAndDigForNugget::Instance());
 }
 
 void VisitBankAndDepositGold::Exit(Miner *pMiner)
@@ -91,7 +92,7 @@ void GoHomeAndSleepTilRested::Execute(Miner *pMiner)
 	if (!pMiner->Fatigued())
 	{
 		std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Rested";
-		pMiner->ChangeState(EnterMineAndDigForNugget::Instance());
+		pMiner->GetFSM()->ChangeState(EnterMineAndDigForNugget::Instance());
 	}
 	else
 	{
@@ -126,7 +127,7 @@ void QuenchThirst::Execute(Miner *pMiner)
 	{
 		pMiner->BuyAndDrinkAWhiskey();
 		std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Drink";
-		pMiner->ChangeState(EnterMineAndDigForNugget::Instance());
+		pMiner->GetFSM()->ChangeState(EnterMineAndDigForNugget::Instance());
 	}
 }
 

@@ -23,8 +23,9 @@ private:
 	int m_iFatigue;
 public:
 	Miner(int id);
+	virtual ~Miner();
+	StateMachine<Miner>* GetFSM() const;
 	virtual void Update();
-	void ChangeState(State<Miner> *pNewState);
 	LocationType Location() const;
 	void ChangeLocation(LocationType location);
 	int GoldCarried() const;

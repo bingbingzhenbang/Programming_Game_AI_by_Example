@@ -5,30 +5,30 @@
 
 Miner::Miner(int id)
 :BaseGameEntity(id),
-m_pCurrentState(GoHomeAndSleepTilRested::Instance()),
+m_Location(Location_Shack),
 m_iGoldCarried(0),
 m_iMoneyInBank(0),
 m_iThirst(0),
 m_iFatigue(0)
 {
+	m_pStateMachine = new StateMachine<Miner>(this);
+	m_pStateMachine->SetCurrentState(GoHomeAndSleepTilRested::Instance());
+}
 
+Miner::~Miner()
+{
+	delete m_pStateMachine;
+}
+
+StateMachine<Miner>* Miner::GetFSM() const
+{
+	return m_pStateMachine;
 }
 
 void Miner::Update()
 {
 	++m_iThirst;
-	if (m_pCurrentState)
-	{
-		m_pCurrentState->Execute(this);
-	}
-}
-
-void Miner::ChangeState(State<Miner> *pNewState)
-{
-	assert(m_pCurrentState && pNewState);
-	m_pCurrentState->Exit(this);
-	m_pCurrentState = pNewState;
-	m_pCurrentState->Enter(this);
+	m_pStateMachine->Update();
 }
 
 LocationType Miner::Location() const
