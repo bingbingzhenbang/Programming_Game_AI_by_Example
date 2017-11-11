@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter2", "Chapter2\Chapter2.vcxproj", "{AACE0851-2821-4EBB-9A5E-FD0E5ED3A2CC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter2WestWorld", "Chapter2WestWorld\Chapter2WestWorld.vcxproj", "{4E33AA03-0E04-4179-B8CD-28DAF27C4D90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AACE0851-2821-4EBB-9A5E-FD0E5ED3A2CC}.Debug|Win32.ActiveCfg = Debug|Win32
-		{AACE0851-2821-4EBB-9A5E-FD0E5ED3A2CC}.Debug|Win32.Build.0 = Debug|Win32
-		{AACE0851-2821-4EBB-9A5E-FD0E5ED3A2CC}.Release|Win32.ActiveCfg = Release|Win32
-		{AACE0851-2821-4EBB-9A5E-FD0E5ED3A2CC}.Release|Win32.Build.0 = Release|Win32
+		{4E33AA03-0E04-4179-B8CD-28DAF27C4D90}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4E33AA03-0E04-4179-B8CD-28DAF27C4D90}.Debug|Win32.Build.0 = Debug|Win32
+		{4E33AA03-0E04-4179-B8CD-28DAF27C4D90}.Release|Win32.ActiveCfg = Release|Win32
+		{4E33AA03-0E04-4179-B8CD-28DAF27C4D90}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
