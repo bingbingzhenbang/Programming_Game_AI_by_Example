@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AACE0851-2821-4EBB-9A5E-FD0E5ED3A2CC}</ProjectGuid>
+    <ProjectGuid>{4E33AA03-0E04-4179-B8CD-28DAF27C4D90}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Chapter2</RootNamespace>
+    <RootNamespace>Chapter2WestWorld</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -80,16 +80,22 @@
   <ItemGroup>
     <ClCompile Include="BaseGameEntity.cpp" />
     <ClCompile Include="EnterMineAndDigForNugget.cpp" />
+    <ClCompile Include="GoHomeAndSleepTilRested.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Miner.cpp" />
+    <ClCompile Include="QuenchThirst.cpp" />
+    <ClCompile Include="VisitBankAndDepositGold.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseGameEntity.h" />
     <ClInclude Include="EnterMineAndDigForNugget.h" />
     <ClInclude Include="EntityNames.h" />
+    <ClInclude Include="GoHomeAndSleepTilRested.h" />
     <ClInclude Include="LocationTypes.h" />
     <ClInclude Include="Miner.h" />
+    <ClInclude Include="QuenchThirst.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="VisitBankAndDepositGold.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
