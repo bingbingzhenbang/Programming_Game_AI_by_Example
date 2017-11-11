@@ -2,6 +2,7 @@
 #define STATEMACHINE_H
 
 #include "State.h"
+#include <cassert>
 
 template <class EntityType>
 class StateMachine
