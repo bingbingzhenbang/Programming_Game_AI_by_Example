@@ -7,7 +7,6 @@ enum EntityName
 {
 	Entity_Miner_Bob,
 	Entity_Elsa,
-	Entity_Name_Cnt,
 };
 
 inline std::string GetNameOfEntity(int id)
