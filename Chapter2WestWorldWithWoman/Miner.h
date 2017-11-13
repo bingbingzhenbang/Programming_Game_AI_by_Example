@@ -26,6 +26,7 @@ public:
 	virtual ~Miner();
 	StateMachine<Miner>* GetFSM() const;
 	virtual void Update();
+	virtual bool HandleMessage(const Telegram &msg);
 	LocationType Location() const;
 	void ChangeLocation(LocationType location);
 	int GoldCarried() const;
