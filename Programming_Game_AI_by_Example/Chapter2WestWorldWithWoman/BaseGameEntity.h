@@ -1,6 +1,8 @@
 #ifndef BASEGAMEENTITY_H
 #define BASEGAMEENTITY_H
 
+struct Telegram;
+
 class BaseGameEntity
 {
 private:
@@ -12,6 +14,7 @@ public:
 	virtual ~BaseGameEntity(){}
 	int ID() const;
 	virtual void Update() = 0;
+	virtual bool HandleMessage(const Telegram &msg) = 0;
 };
 
 #endif // BASEGAMEENTITY_H

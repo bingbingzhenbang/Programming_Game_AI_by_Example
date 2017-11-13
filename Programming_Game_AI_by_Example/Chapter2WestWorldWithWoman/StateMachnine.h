@@ -66,6 +66,14 @@ public:
 	{
 		return typeid(*m_pCurrentState) == typeid(s);
 	}
+	bool HandleMessage(const Telegram &msg)
+	{
+		if (m_pCurrentState && m_pCurrentState->OnMessage(m_pOwner, msg))
+			return true;
+		if (m_pGlobalState && m_pGlobalState->OnMessage(m_pOwner, msg))
+			return true;
+		return false;
+	}
 };
 
 #endif // STATEMACHINE_H
