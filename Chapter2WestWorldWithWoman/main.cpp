@@ -1,13 +1,13 @@
 #include "Miner.h"
 #include "EntityNames.h"
+#include "MessageDispatcher.h"
 #include <iostream>
 
 int main()
 {
-	Miner miner(Entity_Miner_Bob);
 	for (int i = 0; i < 100; ++i)
 	{
-		miner.Update();
+		MessageDispatcher::Instance()->DispatchDelayMessage();
 	}
 	std::cout << "\n";
 	return 0;
