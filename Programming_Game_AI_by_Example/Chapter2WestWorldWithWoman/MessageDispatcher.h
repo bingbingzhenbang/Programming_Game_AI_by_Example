@@ -15,6 +15,7 @@ private:
 public:
 	static MessageDispatcher* Instance();
 	void DispatchMessage(double delay, int sender, int receiver, int msg, void *info);
+	void DispatchDelayMessage();
 };
 
 #endif // MESSAGEDISPATCHER_H
