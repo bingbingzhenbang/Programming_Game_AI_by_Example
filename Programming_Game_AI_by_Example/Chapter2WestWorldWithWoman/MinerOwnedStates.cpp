@@ -38,6 +38,11 @@ void EnterMineAndDigForNugget::Exit(Miner *pMiner)
 	std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Leave gold mine";
 }
 
+bool EnterMineAndDigForNugget::OnMessage(Miner *pMiner, const Telegram &msg)
+{
+	return false;
+}
+
 VisitBankAndDepositGold* VisitBankAndDepositGold::Instance()
 {
 	static VisitBankAndDepositGold instance;
@@ -70,6 +75,11 @@ void VisitBankAndDepositGold::Execute(Miner *pMiner)
 void VisitBankAndDepositGold::Exit(Miner *pMiner)
 {
 	std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Leave the bank";
+}
+
+bool VisitBankAndDepositGold::OnMessage(Miner *pMiner, const Telegram &msg)
+{
+	return false;
 }
 
 GoHomeAndSleepTilRested* GoHomeAndSleepTilRested::Instance()
@@ -106,6 +116,11 @@ void GoHomeAndSleepTilRested::Exit(Miner *pMiner)
 	std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Leave home";
 }
 
+bool GoHomeAndSleepTilRested::OnMessage(Miner *pMiner, const Telegram &msg)
+{
+	return false;
+}
+
 QuenchThirst* QuenchThirst::Instance()
 {
 	static QuenchThirst instance;
@@ -134,4 +149,9 @@ void QuenchThirst::Execute(Miner *pMiner)
 void QuenchThirst::Exit(Miner *pMiner)
 {
 	std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Leave saloon";
+}
+
+bool QuenchThirst::OnMessage(Miner *pMiner, const Telegram &msg)
+{
+	return false;
 }

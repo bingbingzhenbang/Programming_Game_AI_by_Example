@@ -85,6 +85,7 @@
     <ClCompile Include="Miner.cpp" />
     <ClCompile Include="MinerOwnedStates.cpp" />
     <ClCompile Include="MinerWife.cpp" />
+    <ClCompile Include="MinerWifeOwnedStates.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseGameEntity.h" />
@@ -97,6 +98,7 @@
     <ClInclude Include="Miner.h" />
     <ClInclude Include="MinerOwnedStates.h" />
     <ClInclude Include="MinerWife.h" />
+    <ClInclude Include="MinerWifeOwnedStates.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachnine.h" />
     <ClInclude Include="Telegram.h" />
