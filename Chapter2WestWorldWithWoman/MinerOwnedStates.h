@@ -13,6 +13,7 @@ public:
 	virtual void Enter(Miner *pMiner);
 	virtual void Execute(Miner *pMiner);
 	virtual void Exit(Miner *pMiner);
+	virtual bool OnMessage(Miner *pMiner, const Telegram &msg);
 };
 
 class VisitBankAndDepositGold : public State<Miner>
@@ -24,6 +25,7 @@ public:
 	virtual void Enter(Miner *pMiner);
 	virtual void Execute(Miner *pMiner);
 	virtual void Exit(Miner *pMiner);
+	virtual bool OnMessage(Miner *pMiner, const Telegram &msg);
 };
 
 class GoHomeAndSleepTilRested : public State<Miner>
@@ -35,6 +37,7 @@ public:
 	virtual void Enter(Miner *pMiner);
 	virtual void Execute(Miner *pMiner);
 	virtual void Exit(Miner *pMiner);
+	virtual bool OnMessage(Miner *pMiner, const Telegram &msg);
 };
 
 class QuenchThirst : public State<Miner>
@@ -46,6 +49,7 @@ public:
 	virtual void Enter(Miner *pMiner);
 	virtual void Execute(Miner *pMiner);
 	virtual void Exit(Miner *pMiner);
+	virtual bool OnMessage(Miner *pMiner, const Telegram &msg);
 };
 
 #endif // MINEROWNEDSTATES_H
