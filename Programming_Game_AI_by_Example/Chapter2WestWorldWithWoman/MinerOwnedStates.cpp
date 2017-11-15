@@ -155,3 +155,29 @@ bool QuenchThirst::OnMessage(Miner *pMiner, const Telegram &msg)
 {
 	return false;
 }
+
+EatStew* EatStew::Instance()
+{
+	static EatStew instance;
+	return &instance;
+}
+
+void EatStew::Enter(Miner *pMiner)
+{
+
+}
+
+void EatStew::Execute(Miner *pMiner)
+{
+
+}
+
+void EatStew::Exit(Miner *pMiner)
+{
+
+}
+
+bool EatStew::OnMessage(Miner *pMiner, const Telegram &msg)
+{
+	return false;
+}

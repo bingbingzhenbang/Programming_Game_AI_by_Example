@@ -52,4 +52,16 @@ public:
 	virtual bool OnMessage(Miner *pMiner, const Telegram &msg);
 };
 
+class EatStew : public State<Miner>
+{
+private:
+	EatStew(){}
+public:
+	static EatStew* Instance();
+	virtual void Enter(Miner *pMiner);
+	virtual void Execute(Miner *pMiner);
+	virtual void Exit(Miner *pMiner);
+	virtual bool OnMessage(Miner *pMiner, const Telegram &msg);
+};
+
 #endif // MINEROWNEDSTATES_H
