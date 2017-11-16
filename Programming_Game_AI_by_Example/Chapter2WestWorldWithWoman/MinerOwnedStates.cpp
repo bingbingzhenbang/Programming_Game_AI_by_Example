@@ -1,6 +1,9 @@
 #include "MinerOwnedStates.h"
 #include "StateMachnine.h"
 #include "EntityNames.h"
+#include "MessageDispatcher.h"
+#include "MessageTypes.h"
+#include "MessageTimer.h"
 #include <iostream>
 
 EnterMineAndDigForNugget* EnterMineAndDigForNugget::Instance()
@@ -94,6 +97,7 @@ void GoHomeAndSleepTilRested::Enter(Miner *pMiner)
 	{
 		std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Walk into home";
 		pMiner->ChangeLocation(Location_Shack);
+		MessageDispatcher::Instance()->DispatchMessage(SEND_MSG_IMMEDIATELY, pMiner->ID(), Entity_Elsa, Message_HiHoneyImHome, NO_ADDITIONAL_INFO);
 	}
 }
 
@@ -118,6 +122,12 @@ void GoHomeAndSleepTilRested::Exit(Miner *pMiner)
 
 bool GoHomeAndSleepTilRested::OnMessage(Miner *pMiner, const Telegram &msg)
 {
+	if (msg.m_Msg == Message_StewReady)
+	{
+		std::cout << "\nMessage handled by " << GetNameOfEntity(pMiner->ID()) << " at time " << MessageTimer::Instance()->GetCurrentTime();
+		pMiner->GetFSM()->ChangeState(EatStew::Instance());
+		return true;
+	}
 	return false;
 }
 
@@ -164,17 +174,18 @@ EatStew* EatStew::Instance()
 
 void EatStew::Enter(Miner *pMiner)
 {
-
+	std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Smells good";
 }
 
 void EatStew::Execute(Miner *pMiner)
 {
-
+	std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Tastes really good";
+	pMiner->GetFSM()->RevertToPreviousState();
 }
 
 void EatStew::Exit(Miner *pMiner)
 {
-
+	std::cout << "\n" << GetNameOfEntity(pMiner->ID()) << " : Thank you for stew";
 }
 
 bool EatStew::OnMessage(Miner *pMiner, const Telegram &msg)

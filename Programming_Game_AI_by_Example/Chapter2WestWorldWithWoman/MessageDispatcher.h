@@ -4,6 +4,9 @@
 #include <set>
 #include "Telegram.h"
 
+const double SEND_MSG_IMMEDIATELY = -1.0f;
+const int NO_ADDITIONAL_INFO = 0;
+
 class BaseGameEntity;
 
 class MessageDispatcher
