@@ -4,9 +4,9 @@
 #include "BaseGameEntity.h"
 #include "LocationTypes.h"
 
-const int MaxNuggets = 5;
-const int ThirstLevel = 10;
-const int ComfortLevel = 30;
+const int MaxNuggets = 3;
+const int ThirstLevel = 5;
+const int ComfortLevel = 5;
 const int TirednessThreshold = 5;
 
 template <class EntityType>
