@@ -1,5 +1,6 @@
 #include "MinerWife.h"
 #include "StateMachnine.h"
+#include "MinerWifeOwnedStates.h"
 #include <cassert>
 
 MinerWife::MinerWife(int id)
@@ -8,6 +9,8 @@ m_Location(Location_Shack),
 m_bCooking(false)
 {
 	m_pStateMachine = new StateMachine<MinerWife>(this);
+	m_pStateMachine->SetGlobalState(MinerWifeGlobalState::Instance());
+	m_pStateMachine->SetCurrentState(DoHouseWork::Instance());
 }
 
 MinerWife::~MinerWife()

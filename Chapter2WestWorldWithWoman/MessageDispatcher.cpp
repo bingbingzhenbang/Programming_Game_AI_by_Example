@@ -26,11 +26,13 @@ void MessageDispatcher::DispatchMessage(double delay, int sender, int receiver, 
 	if (pSender == 0)
 	{
 		std::cout << "\nNo sender with ID : " << sender << " found";
+		return;
 	}
 	BaseGameEntity *pReceiver = EntityManager::Instance()->GetEntityFromID(receiver);
 	if (pReceiver == 0)
 	{
 		std::cout << "\nNo receiver with ID : " << receiver << " found";
+		return;
 	}
 	Telegram telegram(0.0f, sender, receiver, msg, info);
 	if (delay <= 0.0f)
@@ -42,6 +44,9 @@ void MessageDispatcher::DispatchMessage(double delay, int sender, int receiver, 
 	}
 	else
 	{
+		std::cout << "\nDelayed telegram recorded at time : " << MessageTimer::Instance()->GetCurrentTime()
+			<< " by " << GetNameOfEntity(pSender->ID()) << " for " << GetNameOfEntity(pReceiver->ID())
+			<< ". Msg is " << MsgToStr(msg);
 		telegram.m_DispatchTime = MessageTimer::Instance()->GetCurrentTime() + delay;
 		m_MessageQueue.insert(telegram);
 	}
@@ -59,6 +64,7 @@ void MessageDispatcher::DispatchDelayMessage()
 		std::cout << "\nQueued telegram ready for dispatch : Sent to "
 			<< GetNameOfEntity(pReceiver->ID())
 			<< ". Msg is " << MsgToStr(telegram.m_Msg);
+		Discharge(pReceiver, telegram);
 		m_MessageQueue.erase(m_MessageQueue.begin());
 	}
 }

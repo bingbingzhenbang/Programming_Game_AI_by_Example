@@ -19,7 +19,7 @@ public:
 	}
 	double GetCurrentTime()
 	{
-		return 0.001 * std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - m_StartTime).count();
+		return std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - m_StartTime).count();
 	}
 };
 
