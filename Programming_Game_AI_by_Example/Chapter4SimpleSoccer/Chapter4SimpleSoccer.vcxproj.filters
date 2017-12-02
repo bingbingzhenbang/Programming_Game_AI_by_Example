@@ -30,6 +30,9 @@
     <ClCompile Include="Wall2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BaseGameEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SoccerPitch.h">
@@ -39,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Geometry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseGameEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
