@@ -139,12 +139,14 @@
   <ItemGroup>
     <ClCompile Include="BaseGameEntity.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MovingEntity.cpp" />
     <ClCompile Include="SoccerPitch.cpp" />
     <ClCompile Include="Wall2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseGameEntity.h" />
     <ClInclude Include="Geometry.h" />
+    <ClInclude Include="MovingEntity.h" />
     <ClInclude Include="SoccerPitch.h" />
     <ClInclude Include="Wall2D.h" />
   </ItemGroup>

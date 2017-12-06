@@ -15,9 +15,10 @@ void BaseGameEntity::SetID(int val)
 	m_iNextValidID = m_ID + 1;
 }
 
-BaseGameEntity::BaseGameEntity(int id)
+BaseGameEntity::BaseGameEntity(int id, double radius, const QVector2D &pos)
 : m_bTag(false),
-m_dBoundingRadius(0.0)
+m_dBoundingRadius(radius),
+m_vPosition(pos)
 {
 	SetID(id);
 }
@@ -25,16 +26,6 @@ m_dBoundingRadius(0.0)
 int BaseGameEntity::ID() const
 {
 	return m_ID;
-}
-
-int BaseGameEntity::EntityType() const
-{
-	return m_iType;
-}
-
-void BaseGameEntity::SetEntityType(int type)
-{
-	m_iType = type;
 }
 
 bool BaseGameEntity::IsTagged() const
