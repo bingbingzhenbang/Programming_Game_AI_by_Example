@@ -13,18 +13,15 @@ public:
 	static int GetNextValidID();
 private:
 	int m_ID;
-	int m_iType;
 	bool m_bTag;
 	double m_dBoundingRadius;
 	void SetID(int val);
 protected:
 	QVector2D m_vPosition;
-	BaseGameEntity(int id);
+	BaseGameEntity(int id, double radius, const QVector2D &pos);
 public:
 	virtual ~BaseGameEntity(){}
 	int ID() const;
-	int EntityType() const;
-	void SetEntityType(int type);
 	bool IsTagged() const;
 	void Tag();
 	void UnTag();
