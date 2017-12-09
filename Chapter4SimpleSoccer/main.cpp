@@ -1,10 +1,9 @@
 #include <QtWidgets/QApplication>
-#include <QDialog>
+#include "SimpleSoccerRenderer.h"
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	QDialog w;
-	w.show();
+	SimpleSoccerRenderer::Instance()->Run();
 	return a.exec();
 }

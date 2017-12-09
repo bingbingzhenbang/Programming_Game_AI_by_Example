@@ -26,8 +26,10 @@ public:
 	void SetMaxTurnRate(double max_turn_rate);
 	double Speed() const;
 	double SpeedSquared() const;
+	QVector2D Velocity() const;
 	QVector2D Heading() const;
 	void SetHeading(const QVector2D &heading);
+	QVector2D Side() const;
 };
 
 #endif // MOVINGENTITY_H
