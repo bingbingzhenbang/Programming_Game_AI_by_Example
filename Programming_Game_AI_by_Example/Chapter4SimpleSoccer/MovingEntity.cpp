@@ -59,6 +59,11 @@ double MovingEntity::SpeedSquared() const
 	return m_vVelocity.lengthSquared();
 }
 
+QVector2D MovingEntity::Velocity() const
+{
+	return m_vVelocity;
+}
+
 QVector2D MovingEntity::Heading() const
 {
 	return m_vHeading;
@@ -68,4 +73,9 @@ void MovingEntity::SetHeading(const QVector2D &heading)
 {
 	m_vHeading = heading;
 	m_vSide = GetPerpendicularVector(m_vHeading);
+}
+
+QVector2D MovingEntity::Side() const
+{
+	return m_vSide;
 }
