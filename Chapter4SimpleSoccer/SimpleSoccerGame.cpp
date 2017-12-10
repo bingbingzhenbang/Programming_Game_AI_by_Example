@@ -1,10 +1,12 @@
 #include "SimpleSoccerGame.h"
+#include "SimpleSoccerTimer.h"
 #include "SimpleSoccerRenderer.h"
 
 SimpleSoccerGame::GamePtr SimpleSoccerGame::m_pInstance = 0;
 
 SimpleSoccerGame::SimpleSoccerGame()
 {
+	m_pTimer = SimpleSoccerTimer::Instance();
 	SimpleSoccerRenderer::Instance()->Start();
 }
 

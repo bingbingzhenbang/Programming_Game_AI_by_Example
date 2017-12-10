@@ -35,14 +35,14 @@ void MessageDispatcher::DispatchMessage(double delay, int sender, int receiver, 
 	}
 	else
 	{
-		telegram.m_DispatchTime = SimpleSoccerTimer::Instance()->GetCurrentTime() + delay;
+		telegram.m_DispatchTime = SimpleSoccerTimer::Instance()->GetCurrentSecond() + delay;
 		m_MessageQueue.insert(telegram);
 	}
 }
 
 void MessageDispatcher::DispatchDelayMessage()
 {
-	double CurentTime = SimpleSoccerTimer::Instance()->GetCurrentTime();
+	double CurentTime = SimpleSoccerTimer::Instance()->GetCurrentSecond();
 	while (!m_MessageQueue.empty()
 		&& m_MessageQueue.begin()->m_DispatchTime > 0
 		&& m_MessageQueue.begin()->m_DispatchTime < CurentTime)

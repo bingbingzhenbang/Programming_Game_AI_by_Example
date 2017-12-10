@@ -17,9 +17,17 @@ public:
 		static SimpleSoccerTimer instance;
 		return &instance;
 	}
-	double GetCurrentTime()
+	double GetCurrentSecond()
 	{
 		return std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - m_StartTime).count();
+	}
+	double GetCurrentMilliSecond()
+	{
+		return std::chrono::duration<double, std::milli>(std::chrono::high_resolution_clock::now() - m_StartTime).count();
+	}
+	void Reset()
+	{
+		m_StartTime = std::chrono::high_resolution_clock::now();
 	}
 };
 

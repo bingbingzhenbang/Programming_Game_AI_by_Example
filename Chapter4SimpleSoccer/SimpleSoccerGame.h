@@ -3,6 +3,7 @@
 
 #include <memory>
 
+class SimpleSoccerTimer;
 class SoccerPitch;
 
 class SimpleSoccerGame
@@ -11,6 +12,7 @@ public:
 	typedef std::shared_ptr<SimpleSoccerGame> GamePtr;
 private:
 	static GamePtr m_pInstance;
+	SimpleSoccerTimer *m_pTimer;
 	SoccerPitch *m_pSoccerPitch;
 	SimpleSoccerGame();
 public:
