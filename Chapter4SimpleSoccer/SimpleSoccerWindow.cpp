@@ -14,3 +14,8 @@ SimpleSoccerWindow::~SimpleSoccerWindow()
 {
 
 }
+
+QGraphicsScene* SimpleSoccerWindow::GetScene()
+{
+	return m_pScene;
+}

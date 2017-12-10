@@ -1,5 +1,6 @@
 #include "Wall2D.h"
 #include "Geometry.h"
+#include "SimpleSoccerRenderer.h"
 
 Wall2D::Wall2D(const QVector2D &a, const QVector2D &b)
 : m_From(a),
@@ -38,4 +39,14 @@ QVector2D Wall2D::Normal() const
 QVector2D Wall2D::Center() const
 {
 	return (m_From + m_To) / 2.0;
+}
+
+void Wall2D::Render(bool render_normal)
+{
+	SimpleSoccerRenderer::Instance()->AddLine(m_From, m_To);
+	if (render_normal)
+	{
+		QVector2D center = Center();
+		SimpleSoccerRenderer::Instance()->AddLine(center, center + 5 * m_Norm);
+	}
 }

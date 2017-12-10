@@ -12,7 +12,7 @@ class SimpleSoccerWindow : public QMainWindow
 public:
 	SimpleSoccerWindow(QWidget *parent = 0);
 	~SimpleSoccerWindow();
-
+	QGraphicsScene* GetScene();
 
 private:
 	QGraphicsScene *m_pScene;

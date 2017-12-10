@@ -11,7 +11,8 @@ private:
 public:
 	~SimpleSoccerRenderer();
 	static SimpleSoccerRenderer* Instance();
-	int Run();
+	int Start();
+	void AddLine(const QVector2D &from, const QVector2D &to);
 };
 
 #endif // SIMPLESOCCERRENDERER_H

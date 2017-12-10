@@ -17,6 +17,7 @@ public:
 	void SetTo(const QVector2D &b);
 	QVector2D Normal() const;
 	QVector2D Center() const;
+	void Render(bool render_normal = false);
 };
 
 #endif // WALL2D_H

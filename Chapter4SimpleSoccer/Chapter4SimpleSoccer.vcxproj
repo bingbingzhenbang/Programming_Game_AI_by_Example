@@ -150,6 +150,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageDispatcher.cpp" />
     <ClCompile Include="MovingEntity.cpp" />
+    <ClCompile Include="SimpleSoccerGame.cpp" />
     <ClCompile Include="SimpleSoccerRenderer.cpp" />
     <ClCompile Include="SimpleSoccerWindow.cpp" />
     <ClCompile Include="SoccerPitch.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="EntityManager.h" />
     <ClInclude Include="Geometry.h" />
     <ClInclude Include="MessageDispatcher.h" />
+    <ClInclude Include="SimpleSoccerGame.h" />
     <ClInclude Include="SimpleSoccerTimer.h" />
     <ClInclude Include="MovingEntity.h" />
     <CustomBuild Include="SimpleSoccerWindow.h">

@@ -1,9 +1,9 @@
 #include <QtWidgets/QApplication>
-#include "SimpleSoccerRenderer.h"
+#include "SimpleSoccerGame.h"
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	SimpleSoccerRenderer::Instance()->Run();
+	SimpleSoccerGame::Instance()->Run();
 	return a.exec();
 }
