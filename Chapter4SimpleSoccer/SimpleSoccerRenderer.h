@@ -1,5 +1,5 @@
-#ifndef SIMPLESOCCERRENDER_H
-#define SIMPLESOCCERRENDER_H
+#ifndef SIMPLESOCCERRENDERER_H
+#define SIMPLESOCCERRENDERER_H
 
 #include "SimpleSoccerWindow.h"
 
@@ -14,4 +14,4 @@ public:
 	int Run();
 };
 
-#endif // SIMPLESOCCERRENDER_H
+#endif // SIMPLESOCCERRENDERER_H
